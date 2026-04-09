@@ -21,9 +21,29 @@
 </div>
 
 <div class="card">
+    <div style="text-align:center; margin-bottom:20px;">
+    <button onclick="loadView('view1')">Spider</button>
+    <button onclick="loadView('view2')">Mountain</button>
+    <button onclick="loadView('view3')">High Wind</button>
+</div>
     <iframe src="YOUR_AIRTABLE_OR_NOTION_LINK"
         width="100%" height="500" style="border:none;">
     </iframe>
+    <script>
+function loadView(view) {
+    let iframe = document.querySelector("iframe");
+
+    if (view === "view1") {
+        iframe.src = "LINK_FOR_SPIDER_VIEW";
+    }
+    if (view === "view2") {
+        iframe.src = "LINK_FOR_MOUNTAIN_VIEW";
+    }
+    if (view === "view3") {
+        iframe.src = "LINK_FOR_WIND_VIEW";
+    }
+}
+</script>
 </div>
 
 </section>
