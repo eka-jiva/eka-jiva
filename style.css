@@ -60,7 +60,18 @@ footer {
 .banner {
     position: relative;
     height: 300px;
+    
+    .home-banner {
     background: url('banner.jpg') center/cover no-repeat;
+}
+
+.about-banner {
+    background: url('aboot.jpg') center/cover no-repeat;
+}
+
+.obs-banner {
+    background: url('observation.jpg') center/cover no-repeat;
+}
     display: flex;
     align-items: center;
     justify-content: center;
