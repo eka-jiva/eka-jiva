@@ -256,3 +256,32 @@ footer {
         font-size: 24px;
     }
 }
+/* FILTER BAR */
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.filters select {
+    padding: 10px;
+    border-radius: 6px;
+}
+
+/* DATA GRID */
+.data-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* DATA CARD */
+.data-card {
+    background: white;
+    padding: 20px;
+    width: 280px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
