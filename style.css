@@ -203,3 +203,24 @@ footer {
 html {
     scroll-behavior: smooth;
 }
+/* FEATURE SECTIONS (LIKE REAL SITES) */
+.feature {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 60px 20px;
+}
+
+.feature img {
+    width: 50%;
+    border-radius: 12px;
+}
+
+.feature div {
+    width: 50%;
+}
+
+/* ALTERNATING LAYOUT */
+.reverse {
+    flex-direction: row-reverse;
+}
