@@ -13,7 +13,7 @@ html {
 /* HERO (half) */
 .hero {
    .hero {
-    height: 60vh; /* was 100vh */
+    height: 100vh; /* was 100vh */
     min-height: 400px;
     background: url('homee.jpg') center/cover no-repeat fixed;
     position: relative;
