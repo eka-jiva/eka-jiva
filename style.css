@@ -93,3 +93,15 @@ footer {
 .obs-banner {
     background: url(observation.jpg') center/cover no-repeat;
 }
+button {
+    padding: 10px 20px;
+    background-color: #2e5d50;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1f4037;
+}
