@@ -7,12 +7,15 @@
 
 <body>
 
+<!-- BANNER -->
 <div class="banner obs-banner">
+    <div class="banner-content">
         <h1>Observations</h1>
         <p>Behaviour • Environment • Data</p>
     </div>
 </div>
 
+<!-- INTRO -->
 <section>
 
 <h2 style="text-align:center;">Field Observations Database</h2>
@@ -21,7 +24,45 @@
     <p>This is a live dataset of behavioural observations across environments.</p>
 </div>
 
+</section>
+
+<!-- DASHBOARD FILTER SYSTEM -->
+<section>
+
+<h2 style="text-align:center;">Interactive Observation Dashboard</h2>
+
+<div class="filters">
+
+<select id="speciesFilter">
+    <option value="all">All Species</option>
+    <option value="spider">Spider</option>
+    <option value="bird">Bird</option>
+</select>
+
+<select id="environmentFilter">
+    <option value="all">All Environments</option>
+    <option value="mountain">Mountain</option>
+    <option value="forest">Forest</option>
+</select>
+
+<select id="conditionFilter">
+    <option value="all">All Conditions</option>
+    <option value="wind">High Wind</option>
+    <option value="calm">Calm</option>
+</select>
+
+</div>
+
+<div id="dataContainer" class="data-grid"></div>
+
+</section>
+
+<!-- NOTION DATABASE EMBED -->
+<section>
+
 <div class="card">
+
+<h2 style="text-align:center;">Full Dataset (Notion)</h2>
 
 <div style="text-align:center; margin-bottom:20px;">
     <button onclick="loadView('view1')">Spider</button>
@@ -29,28 +70,100 @@
     <button onclick="loadView('view3')">High Wind</button>
 </div>
 
-<iframe src="https://lydian-boar-b5f.notion.site/ebd//7196b3ad6b584a6ebc6acd2e4136531c?v=da4ab8a51ac4427eac1c320f12c969b9" width="100%" height="600" frameborder="0" allowfullscreen />
+<iframe 
+    src="https://lydian-boar-b5f.notion.site/7196b3ad6b584a6ebc6acd2e4136531c?v=da4ab8a51ac4427eac1c320f12c969b9" 
+    width="100%" 
+    height="600" 
+    style="border:none;">
 </iframe>
 
 </div>
 
+</section>
+
+<!-- SCRIPT -->
 <script>
+
+/* LOCAL DATA (DASHBOARD) */
+const data = [
+    {
+        species: "spider",
+        environment: "mountain",
+        condition: "wind",
+        title: "Orb Weaver - High Wind",
+        description: "Asymmetric web under strong wind conditions."
+    },
+    {
+        species: "spider",
+        environment: "forest",
+        condition: "calm",
+        title: "Orb Weaver - Calm",
+        description: "Symmetrical web in stable conditions."
+    },
+    {
+        species: "bird",
+        environment: "forest",
+        condition: "calm",
+        title: "Bird Nesting",
+        description: "Stable nesting behaviour in forest."
+    }
+];
+
+/* DISPLAY DATA */
+function displayData(filteredData) {
+    const container = document.getElementById("dataContainer");
+    container.innerHTML = "";
+
+    filteredData.forEach(item => {
+        container.innerHTML += `
+            <div class="data-card">
+                <h3>${item.title}</h3>
+                <p>${item.description}</p>
+                <small>${item.species} | ${item.environment} | ${item.condition}</small>
+            </div>
+        `;
+    });
+}
+
+/* FILTER LOGIC */
+function filterData() {
+    const species = document.getElementById("speciesFilter").value;
+    const environment = document.getElementById("environmentFilter").value;
+    const condition = document.getElementById("conditionFilter").value;
+
+    const filtered = data.filter(item => {
+        return (species === "all" || item.species === species) &&
+               (environment === "all" || item.environment === environment) &&
+               (condition === "all" || item.condition === condition);
+    });
+
+    displayData(filtered);
+}
+
+/* EVENTS */
+document.querySelectorAll("select").forEach(select => {
+    select.addEventListener("change", filterData);
+});
+
+/* INITIAL LOAD */
+displayData(data);
+
+/* NOTION VIEW SWITCH */
 function loadView(view) {
     let iframe = document.querySelector("iframe");
 
     if (view === "view1") {
-        iframe.src = "PUT_REAL_LINK_1";
+        iframe.src = "PUT_REAL_SPIDER_LINK";
     }
     if (view === "view2") {
-        iframe.src = "PUT_REAL_LINK_2";
+        iframe.src = "PUT_REAL_MOUNTAIN_LINK";
     }
     if (view === "view3") {
-        iframe.src = "PUT_REAL_LINK_3";
+        iframe.src = "PUT_REAL_WIND_LINK";
     }
 }
-</script>
 
-</section>
+</script>
 
 </body>
 </html>
