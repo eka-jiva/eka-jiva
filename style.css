@@ -17,7 +17,14 @@ html {
     position: relative;
 }
 
+.overlay h1 {
+    font-size: 32px;
+    margin: 0;
+}
 
+.overlay p {
+    font-size: 16px;
+}
 .overlay {
     position: absolute;
     inset: 0;
@@ -35,7 +42,11 @@ nav {
     text-align: center;
     padding: 15px;
 }
-
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
 nav a {
     color: white;
     margin: 0 15px;
@@ -53,7 +64,11 @@ section {
     margin: auto;
     padding: 60px 20px;
 }
-
+section {
+    max-width: 1100px;
+    margin: auto;
+    padding: 80px 20px;
+}
 /* SPLIT LAYOUT */
 .split {
     display: flex;
@@ -221,4 +236,30 @@ html {
 /* ALTERNATING LAYOUT */
 .reverse {
     flex-direction: row-reverse;
+}
+@media (max-width: 768px) {
+    .feature {
+        flex-direction: column;
+    }
+
+    .feature img,
+    .feature div {
+        width: 100%;
+    }
+
+    .split {
+        flex-direction: column;
+    }
+
+    .split img,
+    .split div {
+        width: 100%;
+    }
+
+    .grid {
+        flex-direction: column;
+    }
+}
+.feature img {
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
 }
