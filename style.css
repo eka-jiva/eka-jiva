@@ -12,12 +12,11 @@ html {
 
 /* HERO (half) */
 .hero {
-   .hero {
-    height: 100vh; /* was 100vh */
-    background: url('homee.jpg') center/cover no-repeat fixed;
+    height: 300px;
+    background: url('images/forest.jpg') center/cover no-repeat;
     position: relative;
-};
 }
+
 
 .overlay {
     position: absolute;
