@@ -26,7 +26,7 @@
 
 </section>
 
-<!-- DASHBOARD FILTER SYSTEM -->
+<!-- DASHBOARD -->
 <section>
 
 <h2 style="text-align:center;">Interactive Observation Dashboard</h2>
@@ -57,7 +57,7 @@
 
 </section>
 
-<!-- NOTION DATABASE EMBED -->
+<!-- NOTION EMBED -->
 <section>
 
 <div class="card">
@@ -84,7 +84,7 @@
 <!-- SCRIPT -->
 <script>
 
-/* LOCAL DATA (DASHBOARD) */
+/* DATA */
 const data = [
     {
         species: "spider",
@@ -109,7 +109,7 @@ const data = [
     }
 ];
 
-/* DISPLAY DATA */
+/* DISPLAY */
 function displayData(filteredData) {
     const container = document.getElementById("dataContainer");
     container.innerHTML = "";
@@ -125,7 +125,7 @@ function displayData(filteredData) {
     });
 }
 
-/* FILTER LOGIC */
+/* FILTER */
 function filterData() {
     const species = document.getElementById("speciesFilter").value;
     const environment = document.getElementById("environmentFilter").value;
@@ -148,7 +148,7 @@ document.querySelectorAll("select").forEach(select => {
 /* INITIAL LOAD */
 displayData(data);
 
-/* NOTION VIEW SWITCH */
+/* NOTION SWITCH */
 function loadView(view) {
     let iframe = document.querySelector("iframe");
 
