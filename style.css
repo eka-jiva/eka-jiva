@@ -194,3 +194,6 @@ footer {
     opacity: 1;
     transform: translateY(0);
 }
+.box:hover {
+    transform: scale(1.05);
+}
